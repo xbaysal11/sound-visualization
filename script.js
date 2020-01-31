@@ -51,6 +51,7 @@ function loop() {
         // myElements[i].style.opacity = 0.008*height;
         if(height > 210){
             console.log("OFF!");
+            console.log(`Volume: ${height}`);
 
             body.querySelector('.flame').style.display = 'none'
             setTimeout(() => {
