@@ -8,9 +8,9 @@ array = new Uint8Array(num*2);
 
 width = 10;
 
-window.onclick = function(){
+// window.onclick = function(){
 
-    if(context) return;
+    // if(context) return;
 
     // body.querySelector('h1').remove();
 
@@ -36,7 +36,7 @@ window.onclick = function(){
         alert(error + '\r\n\ Отклонено. Страница будет обновлена!');
         location.reload();
     });
-}
+// }
 
 function loop() {
     window.requestAnimationFrame(loop);
@@ -45,7 +45,7 @@ function loop() {
         height = array[i+num];
         // myElements[i].style.minHeight = height+'px';
         // myElements[i].style.opacity = 0.008*height;
-        if(height > 220){
+        if(height > 200){
             console.log("OFF!");
 
             body.querySelector('.flame').style.display = 'none'
@@ -71,4 +71,4 @@ function flameOff(){
     console.log("off");
 }
 
-alert("Click candle once to start!")
+// alert("Click candle once to start!")
