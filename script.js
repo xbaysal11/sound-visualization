@@ -49,7 +49,7 @@ function loop() {
         height = array[i+num];
         // myElements[i].style.minHeight = height+'px';
         // myElements[i].style.opacity = 0.008*height;
-        if(height > 230){
+        if(height > 210){
             console.log("OFF!");
 
             body.querySelector('.flame').style.display = 'none'
