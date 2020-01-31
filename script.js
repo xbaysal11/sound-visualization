@@ -7,10 +7,12 @@ num = 32;
 array = new Uint8Array(num*2);
 
 width = 10;
-
-// window.onclick = function(){
-
-    // if(context) return;
+// if (window.AudioContext && _config2.default.context.state == "suspended") {
+// 	_config2.default.context.resume()
+// }
+window.onclick = function(){
+    
+    if(context) return;
 
     // body.querySelector('h1').remove();
 
@@ -25,7 +27,9 @@ width = 10;
     // myElements = document.getElementsByClassName('logo');
     context = new AudioContext();
     analyser = context.createAnalyser();
-
+    context.resume().then(() => {
+        console.log('Playback resumed successfully');
+      });
     navigator.mediaDevices.getUserMedia({
         audio: true
     }).then(stream => {
@@ -36,7 +40,7 @@ width = 10;
         alert(error + '\r\n\ Отклонено. Страница будет обновлена!');
         location.reload();
     });
-// }
+}
 
 function loop() {
     window.requestAnimationFrame(loop);
@@ -45,7 +49,7 @@ function loop() {
         height = array[i+num];
         // myElements[i].style.minHeight = height+'px';
         // myElements[i].style.opacity = 0.008*height;
-        if(height > 200){
+        if(height > 230){
             console.log("OFF!");
 
             body.querySelector('.flame').style.display = 'none'
@@ -71,4 +75,4 @@ function flameOff(){
     console.log("off");
 }
 
-// alert("Click candle once to start!")
+alert("Click candle once to start!")
